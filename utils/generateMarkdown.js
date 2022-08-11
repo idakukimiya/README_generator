@@ -13,7 +13,7 @@ function renderContributingSection(confirmContributers, data) {
 
 // Function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
-function renderLicenseBadge(license) { 
+function renderLicenseBadge(license) {
   if (license !== 'no license') {
     return `
   ![badge](https://img.shields.io/badge/license-${license}-blue)
@@ -27,7 +27,7 @@ function renderLicenseBadge(license) {
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
   if (license !== 'no license') {
-  return `
+    return `
   [${license}](https://choosealicense.com/licenses/${license})
     `;
   } else {
@@ -39,7 +39,7 @@ function renderLicenseLink(license) {
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
   if (license !== 'no license') {
-  return `
+    return `
   ## [License](#table-of-contents)
   The application is covered under the following license:
   ${renderLicenseLink(license)}
@@ -47,19 +47,19 @@ function renderLicenseSection(license) {
   } else {
     return ' ';
   }
- }
+}
 
- // Function that returns license in table of contents
- // If there is no license, return an empty string
+// Function that returns license in table of contents
+// If there is no license, return an empty string
 function renderLicenseTOC(license) {
   if (license !== 'no license') {
-  return `
+    return `
   * [License](#license)
     `;
   } else {
     return ' ';
   }
- }
+}
 
 // Function to generate markdown for README
 function generateMarkdown(data) {
@@ -80,32 +80,32 @@ function generateMarkdown(data) {
 
   * [Questions](#questions)
   
-  ## [Description](#table-of-contents)
+## [Description](#table-of-contents)
 
   Provide short explaining the what, why, and how of your project.
 
-* What was the motivation?
+    * What was the motivation?
 
-* What problem does it solve?
+    * What problem does it solve?
 
-* What did you learn?
+    * What did you learn?
 
   ${data.what}
   ${data.why}
   ${data.how}
 
-  ## [Installation](#table-of-contents)
+## [Installation](#table-of-contents)
 
   What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.
 
 
   ${data.installation}
 
-  ## [Usage](#table-of-contents)
+## [Usage](#table-of-contents)
 
   Provide instructions and examples for use.
 
-![screenshot of project](./screenshot.png)
+  ![screenshot of project](./screenshot.png)
 
   ${data.usage}
 
@@ -115,14 +115,13 @@ function generateMarkdown(data) {
   
   ${renderLicenseSection(data.license)}
 
-  ## [Contributing](#table-of-contents)
+## [Contributing](#table-of-contents)
 
   List your collaborators, with links to their GitHub profiles.
   
   ${renderContributingSection(data.confirmContributers, data.contribute)}
-  ## [Tests](#table-of-contents)
-  ${data.test}
-  ## [Questions](#table-of-contents)
+
+## [Questions](#table-of-contents)
   Please contact me using the following links:
   [GitHub](https://github.com/${data.githubUsername})
   [Email: ${data.email}](mailto:${data.email})
