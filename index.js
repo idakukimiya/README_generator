@@ -4,34 +4,13 @@ const fs = require('fs')
 
 const generateMarkdown = require('./utils/generateMarkdown.js')
 
-// TODO: Create a function to initialize app
-const init = () => {
-    return inquirer.prompt()
-    .then(readmeData => {
-        return readmeData;
-    })
-}
-
-// Function call to initialize app
-init()
-    .then(readmeData => {
-        console.log(readmeData);
-        return generateMarkdown(readmeData);
-    })
-    .then(pageMD => {
-        return writeFile(pageMD);
-    })
-    .then(writeFileResponse => {
-        console.log(writeFileResponse.message);
-    })
-    .catch(err => {
-        console.log(err);
-    })
 
 // TODO: Create an array of questions for user input
 //const questions = [];
-inquirer
-    .prompt([
+// inquirer
+//     .prompt(
+
+const questions = [
         {
             type: 'input',
             name: 'title',
@@ -78,9 +57,32 @@ inquirer
             name: 'confirmContributers',
             message: 'Would you like to allow other developers to contribute?',
         },
-    ])
+    ]
 // TODO: Create a function to write README file
 const writeFile = fileContent =>
     fs.writeFile('./generated-README.md', fileContent, err =>
         err ? console.log(err) : console.log('Successfully created README!')
     )
+// TODO: Create a function to initialize app
+const init = () => {
+    return inquirer.prompt(questions)
+        .then(readmeData => {
+            return readmeData;
+        })
+}
+
+// Function call to initialize app
+init()
+    .then(readmeData => {
+        console.log(readmeData);
+        return generateMarkdown(readmeData);
+    })
+    .then(pageMD => {
+        return writeFile(pageMD);
+    })
+    .then(writeFileResponse => {
+        console.log(writeFileResponse.message);
+    })
+    .catch(err => {
+        console.log(err);
+    })
