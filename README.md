@@ -2,13 +2,13 @@
 
 ## Table of Content
 
-- [Description]
+- [Description](#descripton)
 
--[Usage]
+-[Usage](#usage)
 
--[Photos of Mockup]
+-[Photos of Mockup](#photos-of-markup)
 
--[Links to Demo]
+-[Links to Demo](#links to Demo)
 
 ## Description
 
