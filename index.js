@@ -6,9 +6,6 @@ const generateMarkdown = require('./utils/generateMarkdown.js')
 
 
 // TODO: Create an array of questions for user input
-//const questions = [];
-// inquirer
-//     .prompt(
 
 const questions = [
         {
@@ -50,7 +47,7 @@ const questions = [
             type: 'list',
             name: 'license',
             message: 'Which license will you use for your project?',
-            choices: ['agpl', 'apache', 'mit', 'no license']
+            choices: ['apache', 'Academic', 'MIT', 'Mozilla', 'Open', 'no license']
         },
         {
             type: 'confirm',
@@ -64,25 +61,23 @@ const writeFile = fileContent =>
         err ? console.log(err) : console.log('Successfully created README!')
     )
 // TODO: Create a function to initialize app
-const init = () => {
-    return inquirer.prompt(questions)
-        .then(readmeData => {
-            return readmeData;
-        })
-}
+// Function to write README file
+function writeToFile(fileName, data) {
+    fs.writeFile(fileName, data, (err) => {
+        if (err)
+            throw err;
+        console.log('Success! Information transferred to the README!')
+    });
+};
+
+// Function to initialize app
+function init() {
+    inquirer.prompt(questions)
+    .then(function (userInput) {
+        console.log(userInput)
+        writeToFile("README-guide.md", generateMarkdown(userInput));
+    });
+};
 
 // Function call to initialize app
-init()
-    .then(readmeData => {
-        console.log(readmeData);
-        return generateMarkdown(readmeData);
-    })
-    .then(pageMD => {
-        return writeFile(pageMD);
-    })
-    .then(writeFileResponse => {
-        console.log(writeFileResponse.message);
-    })
-    .catch(err => {
-        console.log(err);
-    })
+init();

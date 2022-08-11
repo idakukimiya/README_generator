@@ -2,7 +2,7 @@
 
 ## Table of Content
 
-- [Description](#descripton)
+-[Description](#descripton)
 
 -[Usage](#usage)
 
