@@ -6,51 +6,66 @@ const generateMarkdown = require('./utils/generateMarkdown.js')
 // TODO: Create an array of questions for user input
 //const questions = [];
 inquirer
-  .prompt([
-    {
-      type: 'input',
-      name: 'name',
-      message: 'What is your name?',
-    },
-    {
-      type: 'input',
-      name: 'location',
-      message: 'Where are you from?',
-    },
-    {
-      type: 'input',
-      name: 'hobby',
-      message: 'What is your favorite hobby?',
-    },
-    {
-      type: 'input',
-      name: 'food',
-      message: 'What is your favorite food?',
-    },
-    {
-      type: 'input',
-      name: 'github',
-      message: 'Enter your GitHub Username',
-    },
-    {
-      type: 'input',
-      name: 'linkedin',
-      message: 'Enter your LinkedIn URL.',
-    },
-  ])
-// TODO: Create a function to write README file
-//function writeToFile(fileName, data) {}
+    .prompt([
+        {
+            type: 'input',
+            name: 'title',
+            message: 'What is the title of your project?',
+        },
+        {
+            type: 'input',
+            name: 'githubUsername',
+            message: 'What is your GitHub Username?',
+        },
+        {
+            type: 'input',
+            name: 'email',
+            message: 'What is your email address?',
+        },
+        {
+            type: 'input',
+            name: 'what',
+            message: 'What is your project and what problem will it solve?',
+        },
+        {
+            type: 'input',
+            name: 'why',
+            message: 'Why did you create this project?',
+        },
+        {
+            type: 'input',
+            name: 'how',
+            message: 'How will someone use this?',
+        },
+        {
+            type: 'input',
+            name: 'installation',
+            message: 'Please provide step-by-step installation instructions for your project.',
+        },
+        {
+            type: 'list',
+            name: 'license',
+            message: 'Which license will you use for your project?',
+            choices: ['agpl', 'apache', 'mit', 'no license']
+        },
+        {
+            type: 'confirm',
+            name: 'confirmContributers',
+            message: 'Would you like to allow other developers to contribute?',
+        },
+    ])
+    // TODO: Create a function to write README file
+    .then((answers) => {
+        const pageContent = generateMarkdown(answers);
 
-// TODO: Create a function to initialize app
-//function init() {}
+        fs.writeFile('README', pageContent, (err) =>
+            err ? console.log(err) : console.log('Successfully created README!')
+        );
+    });
 
-// Function call to initialize app
-//init();
+    // TODO: Create a function to initialize app
+    //function init() {}
 
-.then((answers) => {
-    const htmlPageContent = generateHTML(answers);
+    // Function call to initialize app
+    //init();
 
-    fs.writeFile('index.html', htmlPageContent, (err) =>
-      err ? console.log(err) : console.log('Successfully created index.html!')
-    );
-  });
