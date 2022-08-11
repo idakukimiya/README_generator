@@ -12,13 +12,13 @@ Provide short explaining the what, why, and how of your project.
 
 ## Table of Contents (Optional)
 
--[Installation]
+-[Installation](#installation)
 
--[Usage]
+-[Usage](#usage)
 
--[Credits]
+-[Credits](#credits)
 
--[License]
+-[License](#license)
 
 ## Installion
 
@@ -27,6 +27,8 @@ What are the steps required to install your project? Provide a step-by-step desc
 ## Usage
 
 Provide instructions and examples for use.
+
+![screenshot of project](./screenshot.png)
 
 ## Credits
 
