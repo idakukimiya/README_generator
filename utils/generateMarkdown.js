@@ -69,27 +69,55 @@ function generateMarkdown(data) {
   ${renderLicenseBadge(data.license)}
   ## Table-of-Contents
   * [Description](#description)
+
   * [Installation](#installation)
+
   * [Usage](#usage)
+
   ${renderLicenseTOC(data.license)}
+
   * [Contributing](#contributing)
+
   * [Questions](#questions)
   
   ## [Description](#table-of-contents)
+
+  Provide short explaining the what, why, and how of your project.
+
+* What was the motivation?
+
+* What problem does it solve?
+
+* What did you learn?
+
   ${data.what}
   ${data.why}
   ${data.how}
+
   ## [Installation](#table-of-contents)
+
+  What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.
+
+
   ${data.installation}
+
   ## [Usage](#table-of-contents)
+
+  Provide instructions and examples for use.
+
+![screenshot of project](./screenshot.png)
+
   ${data.usage}
-  
+
   For more information on how to add screenshots for examples, visit the following website:
   
   [Mark Down Tutorial](https://agea.github.io/tutorial.md/)
   
   ${renderLicenseSection(data.license)}
+
   ## [Contributing](#table-of-contents)
+
+  List your collaborators, with links to their GitHub profiles.
   
   ${renderContributingSection(data.confirmContributers, data.contribute)}
   ## [Tests](#table-of-contents)
