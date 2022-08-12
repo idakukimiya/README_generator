@@ -124,6 +124,7 @@ function generateMarkdown(data) {
   ${renderContributingSection(data.confirmContributers, data.contribute)}
 
 ## [Questions](#table-of-contents)
+
   Please contact me using the following links:
   [GitHub](https://github.com/${data.githubUsername})
   [Email: ${data.email}](mailto:${data.email})
