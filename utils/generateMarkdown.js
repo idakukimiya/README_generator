@@ -70,17 +70,17 @@ function generateMarkdown(data) {
   
 ## Table-of-Contents
 
-  * [Description](#description)
+  -[Description](#description)
 
-  * [Installation](#installation)
+  -[Installation](#installation)
 
-  * [Usage](#usage)
+  -[Usage](#usage)
 
   ${renderLicenseTOC(data.license)}
 
-  * [Contributing](#contributing)
+  -[Contributing](#contributing)
 
-  * [Questions](#questions)
+  -[Questions](#questions)
   
 ## [Description](#table-of-contents)
 
