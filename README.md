@@ -8,7 +8,7 @@
 
 -[Photos of Mockup](#photos-of-markup)
 
--[Links to Demo](#links to Demo)
+-[Links to Demo]
 
 ## Description
 
@@ -22,6 +22,12 @@ After installation is completed, run the following code: "node index.js" in the 
 
 ## Photos of Markup
 
+![screenshot of project](./assets/screenshot/license1.png)
+
+![screenshot of project](./assets/screenshot/license2.png)
+
 ## Link to Demo
+
+ ![Gif Demo of project](./assets/gif/Node.js%20Challenge%209%20Professional%20README.gif)
 
 "https://drive.google.com/file/d/1gOCEKN64y56r07eL5cW2wW71UFQ6Cbux/view"
